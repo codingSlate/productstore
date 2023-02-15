@@ -1,4 +1,4 @@
-import { createContext, useContext } from "react";
+import { createContext, useContext, useState } from "react";
 
 const initialState = {
     cart:{},
@@ -12,3 +12,8 @@ const initialState = {
 const CartContext = createContext(initialState);
 
 const useCart= ()=>useContext(CartContext)
+
+// provider 
+const CartProvider = ({childern}) =>{
+   
+}
