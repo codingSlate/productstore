@@ -1,6 +1,6 @@
 const FakeStoreAPI={
     fetchAllProducts: async () => {
-        const res = await fetch('https://fakestoreapi.com/products')
+        const res = await fetch('https://fakestoreapi.com/products?limit=5')
         const result = res.json()
         return result
     },
