@@ -9,6 +9,7 @@ const FakeStoreAPI={
         const result = await res.json()
         return result
     },
+
     fetchProductBySearchQuery: async (query) => {
         const res = await fetch('https://fakestoreapi.com/products')
         const result = await res.json()

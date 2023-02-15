@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './Item.css'
 
 export default function Item({data, addToCart}) {
@@ -9,7 +10,8 @@ export default function Item({data, addToCart}) {
         <div className="card-image">
             <img alt="" src={image}/>
         </div>
-        <div className="card-title">{title}</div>
+        <div className="card-title">
+          <Link to={`/product/${id}`}>{title}</Link></div>
         <div className="card-price">
           <span>Price : {price}</span>
           <span>Add</span>
