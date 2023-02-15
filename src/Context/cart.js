@@ -10,3 +10,5 @@ const initialState = {
 }
 
 const CartContext = createContext(initialState);
+
+const useCart= ()=>useContext(CartContext)
