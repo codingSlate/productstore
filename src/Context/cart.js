@@ -15,5 +15,6 @@ const useCart= ()=>useContext(CartContext)
 
 // provider 
 const CartProvider = ({childern}) =>{
+    const [cart, setCart] = useState(initialState.cart)
    
 }
