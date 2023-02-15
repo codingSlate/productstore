@@ -8,3 +8,5 @@ const initialState = {
     incQuentity: ()=>null, 
     decQuentity: ()=>null
 }
+
+const CartContext = createContext(initialState);
