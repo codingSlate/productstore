@@ -1,16 +1,20 @@
 import React from 'react'
-import './index'
+import './Item.css'
 
 export default function Item({data, addToCart}) {
     const {id, image, title, price} = data
-    console.log(data)
   return (
     <div className='card'>
-        {/* <div className="card-image">
+      <div className='card-item' >
+        <div className="card-image">
             <img alt="" src={image}/>
         </div>
         <div className="card-title">{title}</div>
-        <div className="card-price">{price}</div> */}
+        <div className="card-price">
+          <span>Price : {price}</span>
+          <span>Add</span>
+          </div>
+      </div>
     </div>
   )
 }

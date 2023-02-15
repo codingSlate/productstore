@@ -1,0 +1,25 @@
+.grid{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: 1fr;
+    gap: 15px;
+}
+
+.card{
+    background-color: rgb(204, 222, 255);
+    padding: 5px;
+
+}
+
+.card-item{
+    display: flex;
+    flex-direction: column;
+}
+.card-image img{
+    width: 100%;
+}
+.card-price{
+    display: grid;
+    grid-template-columns: 1fr 30px;
+    grid-template-rows: 1fr;
+}

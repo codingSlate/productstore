@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Item from '../../Components/item/Item'
 import {FakeStoreAPI} from '../../services/fake-store-api'
+import './Product.css'
 const Product = () => {
   const [data, setData] = useState(FakeStoreAPI.fetchAllProducts)
 
