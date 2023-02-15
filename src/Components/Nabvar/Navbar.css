@@ -1,0 +1,9 @@
+.header{
+    background-color: cornflowerblue;
+    padding: 15px;
+}
+.nav{
+    display: grid;
+    grid-template-columns: 80px 1fr 80px;
+    grid-template-rows: 1fr;
+}

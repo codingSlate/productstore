@@ -1,0 +1,6 @@
+.card{
+    background-color: rgb(204, 222, 255);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
