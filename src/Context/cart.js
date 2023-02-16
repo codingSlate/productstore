@@ -57,3 +57,5 @@ const CartProvider = ({childern}) =>{
         </CartContext.Provider>
     )
 }
+
+export {useCart, CartProvider}
