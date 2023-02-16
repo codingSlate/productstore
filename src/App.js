@@ -6,19 +6,20 @@ import {Cart} from './pages/Cart'
 import {NotFound} from './pages/NotFound'
 import Navbar from './Components/Nabvar/Navbar';
 
+import { useCart } from './Context/cart';
+
 function App() {
  const navigate = useNavigate()
+ const {cartItemCount} = useCart()
 
 function onSearch(searchQuery){
   navigate(`/?${createSearchParams({q:searchQuery})}`)
   
 }
-function cartItemCount(){
-  
-}
+
   return (
     <div>
-      <Navbar onSearch={onSearch} cartItemCount ={2}/>
+      <Navbar onSearch={onSearch} cartItemCount ={cartItemCount()}/>
       <Routes>
         <Route path="/" element={<Products/>}/>
         <Route path="/product/:productId" element={<Product/>}/>

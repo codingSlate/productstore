@@ -1,7 +1,7 @@
 import { createContext, useContext, useState } from "react";
 
 const initialState = {
-    cart:{},
+    cart:[],
     cartItemCount: ()=>0,
     addToCart: ()=>null,
     removeFromCart:()=>null,
@@ -31,24 +31,24 @@ const CartProvider = ({childern}) =>{
     }
 
     const removeFromCart=()=>{
-        setCart(cart.filter(item=>item.product.id !== product.id))
+        // setCart(cart.filter(item=>item.product.id !== product.id))
     }
 
     const incQuantity = () =>{
-        const copy = cart.slice()
-        const productId = copy.findIndex(item=>item.product.id === product.id)
-        if(productId !== -1){
-            copy[productId].quantity += 1
-            setCart(copy)
-        }
+        // const copy = cart.slice()
+        // const productId = copy.findIndex(item=>item.product.id === product.id)
+        // if(productId !== -1){
+        //     copy[productId].quantity += 1
+        //     setCart(copy)
+        // }
     }
     const decQuantity = () =>{
-        const copy = cart.slice()
-        const productId = copy.findIndex(item=>item.product.id === product.id)
-        if(productId !== -1){
-            copy[productId].quantity -= 1
-            setCart(copy)
-        }
+        // const copy = cart.slice()
+        // const productId = copy.findIndex(item=>item.product.id === product.id)
+        // if(productId !== -1){
+        //     copy[productId].quantity -= 1
+        //     setCart(copy)
+        // }
     }
 
     return(
