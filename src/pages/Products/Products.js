@@ -3,12 +3,14 @@ import { useSearchParams } from 'react-router-dom'
 import Item from '../../Components/item/Item'
 import { FakeStoreAPI } from '../../services/fake-store-api'
 import './Products.css'
+import {useCart} from '../../Context/cart'
 
 const Products = () => {
   const [loading, setLoading] = useState(true)
   const [products, setProducts] = useState([])
   const [queryPath, setQueryPath] = useSearchParams() // get/set URL param
   const searchQry = queryPath.get('q')
+  const {addToCart} = useCart()
 
   useEffect(()=>{
     const fetchProducts = async () =>{
@@ -18,7 +20,7 @@ const Products = () => {
       await FakeStoreAPI.fetchAllProducts()
       setProducts(products)
       setLoading(false)
-      console.log(products)
+      // console.log(products)
     }
     fetchProducts().catch(console.error)
 
@@ -30,7 +32,7 @@ const Products = () => {
     )
   }
 
-  function addToCart(){}
+
 
   return (
     <>
@@ -39,7 +41,7 @@ const Products = () => {
           loading ? <div>Loading...</div> :
           <div className='grid'>
           {
-            products.map((product)=> <Item key={product.id} data={product} addToCart={addToCart}/>)
+            products.map((product)=> <Item key={product.id} data={product} addToCart={()=>addToCart(product)}/>)
           }
           </div>
         }

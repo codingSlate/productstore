@@ -14,7 +14,7 @@ export default function Item({data, addToCart}) {
           <Link to={`/product/${id}`}>{title}</Link></div>
         <div className="card-price">
           <span>Price : {price}</span>
-          <span>Add</span>
+          <button onClick={()=>addToCart(data)}>Add</button>
           </div>
       </div>
     </div>

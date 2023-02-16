@@ -14,7 +14,7 @@ const CartContext = createContext(initialState);
 const useCart= ()=>useContext(CartContext)
 
 // provider 
-const CartProvider = ({childern}) =>{
+const CartProvider = ({children}) =>{
     const [cart, setCart] = useState(initialState.cart)
 
     const cartItemCount =()=>{
@@ -30,30 +30,30 @@ const CartProvider = ({childern}) =>{
         }
     }
 
-    const removeFromCart=()=>{
-        // setCart(cart.filter(item=>item.product.id !== product.id))
+    const removeFromCart=(productId)=>{
+        setCart(cart.filter(item=>item.product.id !== productId))
     }
 
-    const incQuantity = () =>{
-        // const copy = cart.slice()
-        // const productId = copy.findIndex(item=>item.product.id === product.id)
-        // if(productId !== -1){
-        //     copy[productId].quantity += 1
-        //     setCart(copy)
-        // }
+    const incQuantity = (productId) =>{
+        const copy = cart.slice()
+        const prodId = copy.findIndex(item=>item.product.id === productId)
+        if(prodId !== -1){
+            copy[prodId].quantity += 1
+            setCart(copy)
+        }
     }
-    const decQuantity = () =>{
-        // const copy = cart.slice()
-        // const productId = copy.findIndex(item=>item.product.id === product.id)
-        // if(productId !== -1){
-        //     copy[productId].quantity -= 1
-        //     setCart(copy)
-        // }
+    const decQuantity = (productId) =>{
+        const copy = cart.slice()
+        const prodId = copy.findIndex(item=>item.product.id === productId)
+        if(prodId !== -1){
+            copy[prodId].quantity -= 1
+            setCart(copy)
+        }
     }
 
     return(
         <CartContext.Provider value={{cart,cartItemCount, addToCart, removeFromCart, incQuantity, decQuantity}}>
-            {childern}
+            {children}
         </CartContext.Provider>
     )
 }

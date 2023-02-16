@@ -10,8 +10,9 @@ import { useCart } from './Context/cart';
 
 function App() {
  const navigate = useNavigate()
- const {cartItemCount} = useCart()
+ const {cartItemCount, cart} = useCart()
 
+ console.log(cart)
 function onSearch(searchQuery){
   navigate(`/?${createSearchParams({q:searchQuery})}`)
   
