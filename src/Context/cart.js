@@ -50,4 +50,10 @@ const CartProvider = ({childern}) =>{
             setCart(copy)
         }
     }
+
+    return(
+        <CartContext.Provider value={{cart,cartItemCount, addToCart, removeFromCart, incQuantity, decQuantity}}>
+            {childern}
+        </CartContext.Provider>
+    )
 }
